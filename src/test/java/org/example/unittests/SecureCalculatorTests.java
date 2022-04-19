@@ -48,4 +48,17 @@ public class SecureCalculatorTests {
         SecureCalculator calculator = new SecureCalculator();
         Assertions.assertThrows(ArithmeticException.class,()->calculator.divide(2,0));
     }
+
+    @Test
+    public void multiplicationExceptionTest(){
+        SecureCalculator calculator = new SecureCalculator();
+        Assertions.assertThrows(ArithmeticException.class,()->calculator.multiply(2,8));
+    }
+
+    @Test
+    public void randomNumberTest(){
+        SecureCalculator calculator = new SecureCalculator();
+        Assertions.assertTrue((calculator.getRandomNumber(45)<45), "Random Bound");
+        Assertions.assertTrue((calculator.getRandomNumber()<Integer.MAX_VALUE),"Random Max Value");
+    }
 }
