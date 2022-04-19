@@ -42,4 +42,10 @@ public class SecureCalculatorTests {
             Assertions.assertTrue(calculator.isOdd(i), "Testing"+i);
         }
     }
+
+    @Test
+    public void zeroDivisionTest(){
+        SecureCalculator calculator = new SecureCalculator();
+        Assertions.assertThrows(ArithmeticException.class,()->calculator.divide(2,0));
+    }
 }
