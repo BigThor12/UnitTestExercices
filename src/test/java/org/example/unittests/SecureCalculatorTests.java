@@ -34,4 +34,12 @@ public class SecureCalculatorTests {
         }
 
     }
+
+    @Test
+    public void isOddTest(){
+        SecureCalculator calculator = new SecureCalculator();
+        for (int i=1; i<100; i=i+2){
+            Assertions.assertTrue(calculator.isOdd(i), "Testing"+i);
+        }
+    }
 }
